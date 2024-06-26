@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap')
+
+:root
+    --dark-primary:#40A578
+    --primary:#9DDE8B
+    --light-primary:#E6FF94
+    --darkest-primary:#006769
+
+body, html
+    font-family: "Nunito", sans-serif
+    font-size: 2vh
+
+    color: white
+    margin: 0
+    padding: 0
+    width: 100%
+    height: 100%
+
+.title 
+    font-size: 4vh
+    font-weight:  700
+
+.description
+    font-size: 2vh
+    opacity: 0.85
+    font-family: 'Baloo 2', sans-serif
+
+.button-container
+    width: fit-content
+    display: flex
+    align-items: center
+    gap: 1em
+
+.button1
+    padding: .5em 1em 0.5em 1em
+    border-radius: 1vh
+
+    font-size: 2vh
+    font-weight: 600
+
+    background: var(--primary)
+    color: var(--darkest-primary)
+
+    cursor: pointer
+
+.button2
+    padding: .5em 1em 0.5em 1em
+    border-radius: 1vh
+
+    font-size: 2vh
+    font-weight: 600
+
+    outline: 2px solid var(--primary)
+    outline-offset: -2px
+    color: white
+
+    cursor: pointer
+
+main 
+    width: 100%
+    height: 100%
+    background: var(--darkest-primary)
+
+.container
+    padding: 1em 5em 1em 5em
+    box-sizing: border-box
+
+
+
+#navbar
+    display: flex
+    flex-direction: row
+    box-sizing: border-box
+    p
+        flex: 1 1 auto
+        margin: 0
+
+    ul
+        height: fit-content
+        width: fit-content
+        margin: 0
+        
+        box-sizing: border-box
+
+        display: flex
+        justify-content: right
+        align-items: center
+        gap: 2em
+
+        list-style: none
+
+        li
+            cursor: pointer
+
+#hero 
+    height: 89%
+    display: flex
+    align-items: center
+
+    background: var(--darkest-primary)
+
+    &__msg
+        display: flex
+        flex-direction: column
+        gap: .8em
+        width: 80vh
+    &__desc
+        width: 23em
+
+    &__image 
+        flex: 1 1 60%
+        text-align: right
+
+        img
+            width: 80vh
+            height: auto
+
+#about
+    width: 100%
+    height: auto
+
+    padding: 5em
+
+    display: flex
+    flex-direction: column
+    gap: 5em
+
+    background: var(--dark-primary)
+    .feature
+        display: flex
+        gap: 5em
+        flex-direction: row
+
+        align-items: center
+        .msg
+            flex: 1 1 50%
+            width: fit-content
+
+            .description
+                width: 30em
+
+        img
+            height: 20em
+            flex: 1 1 50%
+
+#pricing
+    width: 100%
+    height: 100%
+
+    padding: 5em
+
+    background: var(--darkest-primary)
+    gap: 2em
+
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    span
+        text-align: center
+
+    .card-container
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 2em
+    .card
+        padding: 2em
+        width: 25em
+        height: 35em
+
+        background: var(--primary)
+        color: var(--darkest-primary)
+
+        box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.35)
+    
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        box-sizing: border-box
+        border-radius: 1.5em
+        &__header
+            text-align: center
+            margin-bottom: 1.5em
+        p
+            margin: 0
+        &__plan
+            font-size: 3vh
+            font-weight: 600
