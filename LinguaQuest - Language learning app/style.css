@@ -102,6 +102,7 @@ main {
   flex-direction: column;
   gap: 0.8em;
   width: 80vh;
+  z-index: 2;
 }
 #hero__desc {
   width: 23em;
@@ -114,7 +115,41 @@ main {
   width: 80vh;
   height: auto;
 }
+#hero .hero__blob {
+  position: absolute;
+  width: 65vh;
+  height: 65vh;
+  background: var(--dark-primary);
+  left: 4%;
+  top: 20%;
+  z-index: 1;
+  transform: scaleX(-1);
+  transition: border-radius 1s ease;
+  animation: heroblob 20s ease infinite;
+}
 
+@keyframes heroblob {
+  0% {
+    border-radius: 72% 28% 28% 72%/71% 19% 81% 29%;
+    rotate: 0deg;
+  }
+  20% {
+    border-radius: 64% 36% 38% 62%/51% 73% 27% 49%;
+    rotate: 5deg;
+  }
+  40% {
+    border-radius: 68% 32% 31% 69%/61% 22% 78% 31%;
+    rotate: 10deg;
+  }
+  80% {
+    border-radius: 68% 32% 79% 21%/21% 38% 62% 79%;
+    rotate: 5deg;
+  }
+  100% {
+    border-radius: 72% 28% 28% 72%/71% 19% 81% 29%;
+    rotate: 0deg;
+  }
+}
 #about {
   width: 100%;
   height: auto;
@@ -174,6 +209,7 @@ main {
   align-items: center;
   box-sizing: border-box;
   border-radius: 1.5em;
+  outline: 2px solid rgba(255, 255, 255, 0.815);
 }
 #pricing .card__header {
   text-align: center;
