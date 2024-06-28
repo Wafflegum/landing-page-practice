@@ -120,7 +120,7 @@ main {
   width: 80vh;
   height: auto;
 }
-#hero .hero__blob {
+#hero #hero__blob {
   position: absolute;
   width: 65vh;
   height: 65vh;
@@ -130,7 +130,38 @@ main {
   z-index: 1;
   transform: scaleX(-1);
   transition: border-radius 1s ease;
-  animation: heroblob 20s ease infinite;
+  animation: heroblob 20s linear infinite;
+}
+
+.blob {
+  position: absolute;
+  width: 45vh;
+  height: 45vh;
+  background: var(--darkest-primary);
+  z-index: 1;
+  transition: all 1s ease;
+  animation: heroblob 40s linear infinite;
+}
+.blob:nth-child(1) {
+  left: -50vh;
+  top: 5%;
+}
+.blob:nth-child(2) {
+  left: -125vh;
+  top: 35%;
+}
+.blob:nth-child(3) {
+  left: -50vh;
+  top: 67%;
+}
+.blob.visible:nth-child(1) {
+  left: 10%;
+}
+.blob.visible:nth-child(2) {
+  left: 55%;
+}
+.blob.visible:nth-child(3) {
+  left: 10%;
 }
 
 @keyframes heroblob {
@@ -140,15 +171,13 @@ main {
   }
   20% {
     border-radius: 64% 36% 38% 62%/51% 73% 27% 49%;
-    rotate: 5deg;
   }
   40% {
     border-radius: 68% 32% 31% 69%/61% 22% 78% 31%;
-    rotate: 10deg;
+    rotate: 45deg;
   }
   80% {
     border-radius: 68% 32% 79% 21%/21% 38% 62% 79%;
-    rotate: 5deg;
   }
   100% {
     border-radius: 72% 28% 28% 72%/71% 19% 81% 29%;
@@ -156,6 +185,7 @@ main {
   }
 }
 #about {
+  position: relative;
   width: 100%;
   height: auto;
   padding: 5em;
@@ -171,6 +201,7 @@ main {
   align-items: center;
 }
 #about .feature .msg {
+  z-index: 2;
   flex: 1 1 50%;
   width: fit-content;
 }
