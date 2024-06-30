@@ -29,3 +29,10 @@ const pricingBtn = document.getElementById('pricingBtn')
 pricingBtn.addEventListener('click', () => {
     pricing.scrollIntoView({behavior: 'smooth'})
 })
+
+const contactPage = document.getElementById('contact')
+const contactBtn = document.getElementById('contactBtn')
+
+contactBtn.addEventListener('click', () => {
+    contact.scrollIntoView({behavior: 'smooth'})
+})

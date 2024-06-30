@@ -69,7 +69,7 @@ main
 
 
 .container
-    padding: 1em 5em 1em 5em
+    padding: 1rem 5rem 1rem 5rem
     box-sizing: border-box
     scroll-snap-align: start
 
@@ -80,6 +80,9 @@ main
     p
         flex: 1 1 auto
         margin: 0
+    a
+        color: white
+        text-decoration: none
 
     ul
         height: fit-content
@@ -96,6 +99,7 @@ main
         list-style: none
 
         li
+            text-align: center
             cursor: pointer
 #hero 
     height: 89%
@@ -167,7 +171,6 @@ main
         &:nth-child(3) 
             left: 4%
         
-
 .blob 
     width: 45vh
     height: 45vh
@@ -288,4 +291,73 @@ main
             img
                 width: 2em
                 height: 2em
+
+#contact
+    height: 30%
+    width: 100%
+
+    padding: 3em
+    box-sizing: border-box
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+    gap: 3em
+
+    #socials
+        display: flex
+        flex-direction: column
+
+        p
+            margin: 0
+            padding: 0
+
+            text-align: center
+        #links
+            display: flex
+            justify-content: center
+            align-items: center
+
+            text-align: center
+
+            img
+                width: 3.5em
+                cursor: pointer
+
+    #email
+        display: flex
+        flex-direction: column
+        gap: 0.6em
+
+        span
+            border: .25vh solid var(--dark-primary)
+            border-radius: 1.5vh
+
+        input
+            height: 100%
+
+            padding: 0.6em
+
+            background: transparent
+            color: white
+
+            outline: 0
+            border: 0
+
+        button
+            height: 100%
+            font: inherit
+            font-weight: 600
+            background: var(--primary)
+            color: var(--darkest-primary)
+            
+            padding: 0.6em
+            box-sizing: border-box
+            border-radius: 0 1vh 1vh 0
+
+            border: 0
+            outline: 0
+
+            cursor: pointer
 
