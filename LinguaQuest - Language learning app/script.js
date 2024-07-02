@@ -1,38 +1,40 @@
 const heroBlob = document.querySelector('#hero__blob');
-const aboutBlobs = document.querySelectorAll('.blob-container')
+const aboutBlobs = document.querySelectorAll('.blob-container');
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        entry.target.classList.toggle('visible', entry.isIntersecting)
-        console.log(entry)
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            entry.target.classList.toggle('visible', entry.isIntersecting);
+            console.log(entry);
+        });
+    },
+    {
+        rootMargin: '-35% 0% -35% 0%',
+    }
+);
 
-    })
-}, {
-    rootMargin: "-35% 0% -35% 0%"
-})
+observer?.observe(heroBlob);
+aboutBlobs?.forEach((e) => {
+    observer.observe(e);
+});
 
-observer.observe(heroBlob)
-aboutBlobs.forEach(e => {
-    observer.observe(e)
-})
+const aboutPage = document.getElementById('about');
+const aboutBtn = document.getElementById('aboutBtn');
 
-const aboutPage = document.getElementById('about')
-const aboutBtn = document.getElementById('aboutBtn')
+aboutBtn?.addEventListener('click', () => {
+    aboutPage.scrollIntoView({ behavior: 'smooth' });
+});
 
-aboutBtn.addEventListener('click', () => {
-    aboutPage.scrollIntoView({behavior: 'smooth'})
-})
+const pricingPage = document.getElementById('pricing');
+const pricingBtn = document.getElementById('pricingBtn');
 
-const pricingPage = document.getElementById('pricing')
-const pricingBtn = document.getElementById('pricingBtn')
+pricingBtn?.addEventListener('click', () => {
+    pricing.scrollIntoView({ behavior: 'smooth' });
+});
 
-pricingBtn.addEventListener('click', () => {
-    pricing.scrollIntoView({behavior: 'smooth'})
-})
+const contactPage = document.getElementById('contact');
+const contactBtn = document.getElementById('contactBtn');
 
-const contactPage = document.getElementById('contact')
-const contactBtn = document.getElementById('contactBtn')
-
-contactBtn.addEventListener('click', () => {
-    contact.scrollIntoView({behavior: 'smooth'})
-})
+contactBtn?.addEventListener('click', () => {
+    contact.scrollIntoView({ behavior: 'smooth' });
+});

@@ -19,11 +19,13 @@ body, html {
 }
 
 .title {
+  z-index: 5;
   font-size: 4vh;
   font-weight: 700;
 }
 
 .description {
+  z-index: 4;
   font-size: 2vh;
   opacity: 0.85;
   font-family: "Baloo 2", sans-serif;
@@ -62,7 +64,9 @@ main {
   height: 100%;
   background: var(--darkest-primary);
   scroll-snap-type: y proximity;
-  overflow: scroll;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
 }
 
 .container {
@@ -145,6 +149,7 @@ main {
   box-sizing: border-box;
   position: absolute;
   transition: all 1s ease;
+  filter: blur(0.25em);
 }
 .blob-container:nth-child(1) {
   left: -60vh;
@@ -157,6 +162,9 @@ main {
 .blob-container:nth-child(3) {
   left: -60vh;
   top: 60%;
+}
+.blob-container.visible {
+  filter: blur(0em);
 }
 .blob-container.visible:nth-child(1) {
   transform: scaleX(1);
@@ -294,18 +302,26 @@ main {
 #contact {
   height: 30%;
   width: 100%;
-  padding: 3em;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3em;
+  text-align: center;
+  gap: 2em;
+}
+#contact .title {
+  flex: 1 1 30%;
+  text-align: left;
 }
 #contact #socials {
   display: flex;
   flex-direction: column;
+  flex: 1 1 60%;
 }
 #contact #socials p {
+  margin: 0;
+}
+#contact #socials span {
   margin: 0;
   padding: 0;
   text-align: center;
@@ -322,22 +338,35 @@ main {
 }
 #contact #email {
   display: flex;
+  flex: 1 1 30%;
   flex-direction: column;
   gap: 0.6em;
 }
 #contact #email span {
-  border: 0.25vh solid var(--dark-primary);
+  display: flex;
+  border: 0.25vh solid var(--primary);
   border-radius: 1.5vh;
 }
-#contact #email input {
-  height: 100%;
-  padding: 0.6em;
+#contact #email span input {
+  flex: 1 1 80%;
+  min-height: 100%;
+  padding: 0.5em 1em 0.5em 1em;
+  box-sizing: border-box;
   background: transparent;
   color: white;
   outline: 0;
   border: 0;
 }
-#contact #email button {
+#contact #email span input::placeholder {
+  font-family: inherit;
+  color: white;
+}
+#contact #email span input::-moz-placeholder {
+  font-family: inherit;
+  color: white;
+}
+#contact #email span button {
+  flex: 1 1 20%;
   height: 100%;
   font: inherit;
   font-weight: 600;
@@ -348,6 +377,61 @@ main {
   border-radius: 0 1vh 1vh 0;
   border: 0;
   outline: 0;
+  cursor: pointer;
+}
+
+#download {
+  height: 89%;
+  display: flex;
+  flex-direction: rows;
+  align-items: center;
+  position: relative;
+  margin-bottom: 10em;
+}
+#download span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  padding: 5em 0 1em 0;
+  gap: 0.8em;
+}
+#download span .description {
+  text-align: left;
+  width: 30em;
+}
+#download__image {
+  flex: 1 1 60%;
+  text-align: right;
+}
+#download__image img {
+  width: 80vh;
+  height: auto;
+}
+#download #hero__blob {
+  position: absolute;
+  width: 60vh;
+  height: 60vh;
+  background: var(--darker-primary);
+  left: 8%;
+  top: 18%;
+  z-index: 0;
+  transform: scaleX(-1);
+  transition: border-radius 1s ease;
+  animation: heroblob 20s linear infinite;
+}
+#download #links {
+  z-index: 1;
+  width: fit-content;
+  height: auto;
+  display: flex;
+  gap: 1rem;
+  padding: 1em 0 1em 0;
+}
+#download #links img {
+  object-fit: cover;
+  width: 10em;
+  height: 3.5em;
   cursor: pointer;
 }
 
